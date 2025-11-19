@@ -45,7 +45,7 @@ app.get('/fun', (req, res) => {
 app.get('/about', (req, res) => {
     res.send(`
         <h1>About This Server</h1>
-        <p>This is Budd's interactive Node server deployed on Render!</p>
+        <p>This is My interactive server!</p>
         <a href="/">Go back</a>
     `);
 });
@@ -68,8 +68,8 @@ app.post('/game-check', (req, res) => {
     const guess = parseInt(req.body.guess);
     const correct = Math.floor(Math.random() * 5) + 1;
     let message = (guess === correct)
-        ? 🎉 You guessed it! The number was ${correct}.
-        : ❌ Nope! The correct number was ${correct}.;
+        ? `🎉 You guessed it! The number was ${correct}.`
+        : `❌ Nope! The correct number was ${correct}.`;
     res.send(`
         <h1>${message}</h1>
         <a href="/game">Try Again</a><br>
